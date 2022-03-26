@@ -3,6 +3,9 @@ import './App.css';
 import VideoList from './components/video_list/VideoList';
 import { useEffect, useState } from 'react';
 import Nav from './components/Nav';
+import { Route, Routes } from 'react-router-dom';
+import VideoView from './pages/VideoView';
+import Home from './pages/Home';
 
 function App({Youtube}) {
   const [videos, setVideos] = useState([]);
@@ -22,7 +25,11 @@ function App({Youtube}) {
   return (
     <>
       <Nav onSearch={search}></Nav>
-      <VideoList videos={videos}></VideoList>
+      
+      <Routes>
+        <Route path="/" element={<Home videos={videos}/>} />
+        <Route path="/videoView/:id" element={<VideoView videos={videos}/>} />
+      </Routes>
     </>
   );
 }

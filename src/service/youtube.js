@@ -8,7 +8,7 @@ class Youtube{
     var axios = require('axios');
     var config = {
       method: 'get',
-      url: `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${this.key}`,
+      url: `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=50&key=${this.key}`,
       headers: { }
     };
     return(
@@ -27,7 +27,7 @@ class Youtube{
 
     var config = {
       method: 'get',
-      url: `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&maxResults=25&&type=video&key=${this.key}`,
+      url: `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&maxResults=50&&type=video&key=${this.key}`,
       headers: { }
     };
     console.log(config.url)
